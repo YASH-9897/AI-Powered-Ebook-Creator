@@ -4,7 +4,7 @@ import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy, useSortable } from "@dnd-kit/sortable"
 import { CSS } from "@dnd-kit/utilities";
 
-import Button from "../ui/Button";
+import Button from "../UI/Button";
 
 //Sortable Item component
 
