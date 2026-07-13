@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Sparkles, Type, Eye, Maximize2 } from "lucide-react";
-import Button from "../ui/Button";
-import InputField from "../ui/InputField";
+import Button from "../UI/Button";
+import InputField from "../UI/InputField";
 import SimpleMDEditor from "../editor/SimpleMDEditor";
 import EditorPage from "../../pages/EditorPage";
 

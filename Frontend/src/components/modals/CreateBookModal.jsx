@@ -9,10 +9,10 @@ import {
   Lightbulb,
   Palette,
 } from "lucide-react";
-import Modal from "../ui/Modal";
-import InputField from "../ui/InputField";
-import SelectField from "../ui/SelectField";
-import Button from "../ui/Button";
+import Modal from "../UI/Modal";
+import InputField from "../UI/InputField";
+import SelectField from "../UI/SelectField";
+import Button from "../UI/Button";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import toast from "react-hot-toast";

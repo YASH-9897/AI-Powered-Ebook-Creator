@@ -3,7 +3,7 @@ import Navbar from "../components/layout/Navbar";
 import Hero  from "../components/landing/Hero";
 import { FEATURES, TESTIMONIALS } from '../utils/data';
 import Features from '../components/landing/Features';
-import Testimonial from '../components/landing/testimonial';
+import Testimonial from '../components/landing/Testimonial';
 import Footer from '../components/landing/Footer';
 
 
