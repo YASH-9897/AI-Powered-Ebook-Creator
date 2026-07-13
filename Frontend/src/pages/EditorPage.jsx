@@ -16,11 +16,11 @@ import { arrayMove } from "@dnd-kit/sortable";
 
 import axiosInstance from "../utils/axiosInstance";
 import { API_PATHS } from "../utils/apiPaths";
-import Dropdown, { DropdownItem } from "../components/ui/Dropdown";
-import InputField from "../components/ui/InputField";
-import Button from "../components/ui/Button";
-import Modal from "../components/ui/Modal";
-import SelectField from "../components/ui/SelectField";
+import Dropdown, { DropdownItem } from "../components/UI/Dropdown";
+import InputField from "../components/UI/InputField";
+import Button from "../components/UI/Button";
+import Modal from "../components/UI/Modal";
+import SelectField from "../components/UI/SelectField";
 import ChapterSidebar from "../components/editor/ChapterSidebar";
 import ChapterEditorTab from "../components/editor/ChapterEditorTab";
 import BookDetailsTab from "../components/editor/BookDetailsTab";

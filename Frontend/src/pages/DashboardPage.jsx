@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { Plus, Book } from "lucide-react";
 
 import DashboardLayout from "../components/layout/DashboardLayout";
-import Button from "../components/ui/Button";
+import Button from "../components/UI/Button";
 import { useAuth } from "../context/AuthContext";
 import axiosInstance from "../utils/axiosInstance";
 import { API_PATHS } from "../utils/apiPaths";
