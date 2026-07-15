@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const navlinks = [
     { name: "Features", href: "#features" },
-    { name: "Testimonials", href: "#Testimonials" },
+    { name: "Testimonials", href: "#testimonials" },
   ];
 
   //close dropdown when clicking outside 

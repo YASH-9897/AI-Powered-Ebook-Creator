@@ -49,7 +49,7 @@ const ViewBook = ({ book }) => {
                         </button>
                         <div>
                             <h1 className="font-semibold text-base md:text-lg truncate">{book.title}</h1>
-                            <p className="text-sm text-gray-500">by {book.Author}</p>
+                            <p className="text-sm text-gray-500">by {book.author}</p>
                         </div>
                     </div>
 

@@ -380,12 +380,12 @@ const exportAsDocument = async (req, res) => {
         );
 
         //Subtitle if exists
-        if (book.Subtitle && book.Subtitle.trim()) {
+        if (book.subtitle && book.subtitle.trim()) {
             titlePage.push(
                 new Paragraph({
                     children: [
                         new TextRun({
-                            text: book.Subtitle,
+                            text: book.subtitle,
                             font: DOCX_STYLES.fonts.heading,
                             size: DOCX_STYLES.sizes.Subtitle * 2,
                             color: "4A5568",
@@ -402,7 +402,7 @@ const exportAsDocument = async (req, res) => {
             new Paragraph({
                 children: [
                     new TextRun({
-                        text: `by ${book.Author}`,
+                        text: `by ${book.author}`,
                         font: DOCX_STYLES.fonts.heading,
                         size: DOCX_STYLES.sizes.author * 2,
                         color: "2D3748",
@@ -836,12 +836,12 @@ const exportAsPDF = async (req, res) => {
             .text(book.title, { align: "center" });
         doc.moveDown(2);
 
-        if (book.Subtitle && book.Subtitle.trim()) {
+        if (book.subtitle && book.subtitle.trim()) {
             doc
                 .font(TYPOGRAPHY.fonts.sans)
                 .fontSize(TYPOGRAPHY.sizes.h2)
                 .fillColor(TYPOGRAPHY.colors.text)
-                .text(book.Subtitle, { align: "center" });
+                .text(book.subtitle, { align: "center" });
             doc.moveDown(1);
 
         }
@@ -849,7 +849,7 @@ const exportAsPDF = async (req, res) => {
             .font(TYPOGRAPHY.fonts.sans)
             .fontSize(TYPOGRAPHY.sizes.author)
             .fillColor(TYPOGRAPHY.colors.text)
-            .text(`by ${book.Author}`, { align: "center" });
+            .text(`by ${book.author}`, { align: "center" });
 
 
         //process chapters

@@ -32,11 +32,11 @@ const bookSchema = new mongoose.Schema({
                 type: String,
                 required: true,
             },
-            Subtitle: {
+            subtitle: {
                 type: String,
                 default: "",
             },
-            Author: {
+            author: {
                 type: String,
                 required: true,
             },

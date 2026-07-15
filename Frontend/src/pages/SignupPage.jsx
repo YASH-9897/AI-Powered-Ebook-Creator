@@ -33,7 +33,10 @@ const SignupPage = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      login(profileResponse.data, token);
+      login({
+        userData: profileResponse.data,
+        token,
+      });
       toast.success("Account created successfully!");
       navigate("/dashboard");
 

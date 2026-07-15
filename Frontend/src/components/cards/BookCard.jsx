@@ -50,7 +50,7 @@ const BookCard = ({ book, onDelete }) => {
             {book.title}
           </h3>
           <p className="text-[13px] text-gray-300 font-medium">
-            {book.Author}
+            {book.author}
           </p>
         </div>
       </div>

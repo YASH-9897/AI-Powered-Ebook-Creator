@@ -61,13 +61,18 @@ const DashboardPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [bookToDelete, setBookToDelete] = useState(null);
-  const { user } = useAuth();
+  const { user, loading, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (loading) return;
+
+    if (!isAuthenticated) {
+      navigate("/login");
+      return;
+    }
     const fetchBooks = async () => {
       try {
-
         const response = await axiosInstance.get(API_PATHS.BOOKS.GET_BOOKS);
         setBooks(response.data);
       } catch (error) {
@@ -78,7 +83,7 @@ const DashboardPage = () => {
 
     };
     fetchBooks();
-  }, []);
+  }, [loading, isAuthenticated, navigate]);
 
 
   const handleDeleteBook = async () => {
@@ -100,7 +105,7 @@ const DashboardPage = () => {
 
 
   const handleCreateBookClick = () => {
-  
+
     setIsCreateModalOpen(true);
   };
 

@@ -31,17 +31,20 @@ exports.registerUser = async (req, res) => {
         if (NewUser) {
             res.status(201).json({
                 message: "User registered successfully",
+                _id: NewUser._id,
+                name: NewUser.name,
+                email: NewUser.email,
                 token: generateToken(NewUser._id),
             });
         }
-         else {
+        else {
             res.status(400).json({ message: "Invalid User data" });
-                }
-        } 
+        }
+    }
     catch (error) {
         console.error(error);
         return res.status(500).json({ message: error.message, });
-                   }
+    }
 };
 
 
@@ -56,17 +59,17 @@ exports.loginUser = async (req, res) => {
     try {
         const user = await User.findOne({ email }).select("+password")
 
-        if (user && ( await user.matchPassword(password))) {
+        if (user && (await user.matchPassword(password))) {
             res.json({
-                message:"Login successfull" , 
-                _id:user._id,
-                email:user.email,
+                message: "Login successfull",
+                _id: user._id,
+                email: user.email,
                 token: generateToken(user._id),
-                
+
             });
         }
-        else{
-                res.status(401).json({message: "Invalid Credentials"})
+        else {
+            res.status(401).json({ message: "Invalid Credentials" })
         }
     } catch (error) {
         res.status(500).json({ message: "Server Error" });
@@ -80,13 +83,13 @@ exports.loginUser = async (req, res) => {
 exports.getProfile = async (req, res) => {
 
     try {
-        const user  = await User.findById(req.User.id);
+        const user = await User.findById(req.User.id);
         res.json({
-            _id:user._id,
-            name:user.name,
-            email:user.email,
-            avatar:user.avatar,
-            isPro:user.isPro,
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            avatar: user.avatar,
+            isPro: user.isPro,
         });
 
     } catch (error) {
@@ -104,23 +107,23 @@ exports.getProfile = async (req, res) => {
 exports.updateUserProfile = async (req, res) => {
 
     try {
-        
+
         const user = await User.findById(req.User._id);
 
-        if(user){
-            user.name = req.body.name || user.name ;
+        if (user) {
+            user.name = req.body.name || user.name;
 
-            const updatedUser= await user.save(); 
+            const updatedUser = await user.save();
 
             res.json({
-                _id: updatedUser._id, 
-                name:updatedUser.name,
+                _id: updatedUser._id,
+                name: updatedUser.name,
             });
 
-        } 
-    
-    else{
-            res.status(404).json({message: "User not found"});
+        }
+
+        else {
+            res.status(404).json({ message: "User not found" });
         }
 
     } catch (error) {

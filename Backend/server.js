@@ -47,8 +47,7 @@ const PORT = Number(process.env.PORT) || 5000; // default safe port
 
 const server = app.listen(PORT, () => {
     const addr = server.address();
-    console.log(`Server running on port ${PORT}`);
-    console.log('Server address:', addr);
+
 });
 
 server.on('error', (err) => {
