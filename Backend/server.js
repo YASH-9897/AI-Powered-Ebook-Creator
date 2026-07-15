@@ -18,9 +18,9 @@ app.use(
     cors({
         origin: [
             "http://localhost:5173",
-            "ai-powered-ebook-creator-c8fu.vercel.app"
+            "https://ai-powered-ebook-creator-c8fu.vercel.app",
+
         ],
-        credentials: true,
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })
