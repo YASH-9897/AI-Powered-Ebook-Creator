@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from '../../utils/apiPaths';
+const BASE_URL = import.meta.env.VITE_API_URL;
 import { Edit, Trash2 } from 'lucide-react';
 
 const BookCard = ({ book, onDelete }) => {
