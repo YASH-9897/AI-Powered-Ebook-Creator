@@ -25,7 +25,7 @@ const DOCX_STYLES = {
     },
     sizes: {
         title: 32,
-        Subtitle: 20,
+        subtitle: 20,
         author: 18,
         chapterTitle: 24,
         h1: 20,
@@ -387,7 +387,7 @@ const exportAsDocument = async (req, res) => {
                         new TextRun({
                             text: book.subtitle,
                             font: DOCX_STYLES.fonts.heading,
-                            size: DOCX_STYLES.sizes.Subtitle * 2,
+                            size: DOCX_STYLES.sizes.subtitle * 2,
                             color: "4A5568",
                         }),
                     ],

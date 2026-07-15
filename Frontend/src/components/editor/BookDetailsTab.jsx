@@ -19,9 +19,9 @@ const BookDetailsTab = ({
             <h3 className="text-lg font-semibold text-slate-900 mb-4">Book Details</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <InputField label="Title" name="title" value={book.title} onChange={onBookChange} />
-                <InputField label="Author" name="author" value={book.author || ""} onChange={onBookChange} />
+                <InputField label="author" name="author" value={book.author || ""} onChange={onBookChange} />
                 <div className="md:col-span-2">
-                    <InputField label="Subtitle" name="subtitle" value={book.subtitle || ''} onChange={onBookChange} />
+                    <InputField label="subtitle" name="subtitle" value={book.subtitle || ''} onChange={onBookChange} />
                 </div>
             </div>
         </div>

@@ -94,7 +94,7 @@ const CreateBookModal = ({ isOpen, onClose, onBookCreated }) => {
     try {
       const response = await axiosInstance.post(API_PATHS.BOOKS.CREATE_BOOK, {
         title: BookTitle,
-        Author: user?.name || "Unknown Author",
+        author: user?.name || "Unknown Author",
         chapters: chapters,
       });
       toast.success("eBook created successfully!");

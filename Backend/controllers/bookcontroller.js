@@ -6,17 +6,17 @@ const Book = require("../models/Book");
 
 const createBook = async (req, res) => {
     try {
-        const { title, Author, Subtitle, chapters } = req.body;
+        const { title, author, subtitle, chapters } = req.body;
 
-        if (!title || !Author) {
+        if (!title || !author) {
             return res.status(400).json({ message: "Please provide a title and author " });
         }
 
         const book = await Book.create({
             userId: req.User._id,
             title,
-            Author,
-            Subtitle,
+            author,
+            subtitle,
             chapters,
         });
 
