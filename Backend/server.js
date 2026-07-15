@@ -16,7 +16,11 @@ const app = express();
 //middleware for handling cors
 app.use(
     cors({
-        origin: "*",
+        origin: [
+            "http://localhost:5173",
+            "ai-powered-ebook-creator-c8fu.vercel.app"
+        ],
+        credentials: true,
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
     })
@@ -31,6 +35,10 @@ app.use(express.json());
 
 //static folder for uploads
 app.use("/backend/uploads", express.static(path.join(__dirname, "uploads")))
+
+app.get("/", (req, res) => {
+    res.send("API is running...");
+});
 
 //Routes Here
 app.use("/api/auth", authRoutes);
