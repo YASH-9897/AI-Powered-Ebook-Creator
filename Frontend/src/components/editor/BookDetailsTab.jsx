@@ -1,7 +1,7 @@
 import InputField from "../UI/InputField";
 import Button from "../UI/Button";
 import { UploadCloud } from "lucide-react";
-import { BASE_URL } from "../../utils/apiPaths";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 const BookDetailsTab = ({
     book,
@@ -10,9 +10,11 @@ const BookDetailsTab = ({
     isUploading,
     fileInputRef,
 }) => {
-    const coverImageUrl = book.coverImage.startsWith('http')
-        ? book.coverImage
-        : `${BASE_URL}/backend${book.coverImage}`.replace(/\\/g, '/');
+    const coverImageUrl = book.coverImage
+        ? (book.coverImage.startsWith("http")
+            ? book.coverImage
+            : `${BASE_URL}${book.coverImage}`.replace(/\\/g, "/"))
+        : "";
 
     return <div className="p-8 max-w-4xl mx-auto" >
         <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
@@ -27,17 +29,17 @@ const BookDetailsTab = ({
         </div>
         <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm mt-8">
             <h3 className="text-lg font-semibold text-slate-900 mb-4">Cover Image</h3>
-    <div className="flex items-start gap-6">
-        <img src={coverImageUrl} alt="cover" className="w-32 h-48 object-cover rounded-lg bg-slate-100 shadow" />
-        <div>
-                <p className="text-sm text-slate-600 mb-4">Upload a new cover image. Recommended size: 600x800px . </p>
-                <input type="file" ref={fileInputRef} onChange={onCoverUpload} className="hidden" accept="image/*" />
-                <Button variant="secondary" onClick={() => fileInputRef.current.click()} isLoading={isUploading} icon={UploadCloud}>
-                Upload Image
-            </Button>
+            <div className="flex items-start gap-6">
+                <img src={coverImageUrl} alt="cover" className="w-32 h-48 object-cover rounded-lg bg-slate-100 shadow" />
+                <div>
+                    <p className="text-sm text-slate-600 mb-4">Upload a new cover image. Recommended size: 600x800px . </p>
+                    <input type="file" ref={fileInputRef} onChange={onCoverUpload} className="hidden" accept="image/*" />
+                    <Button variant="secondary" onClick={() => fileInputRef.current.click()} isLoading={isUploading} icon={UploadCloud}>
+                        Upload Image
+                    </Button>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
     </div>
 
 };
